@@ -22,6 +22,8 @@ export default {
     }
   },
   updated() {
+    // 这里可以利用updated钩子函数获取 offsetTop
+    // 在touchmove的时候直接使用获取到的定值 不要再touchmove的时候每次都获取
     this.startY = this.$refs['A'][0].offsetTop
   },
   computed: {
@@ -44,11 +46,13 @@ export default {
     },
     handleTouchMove(e) {
       if (this.touchStatus) {
+        // 函数节流 提高性能
         if (this.timer) {
           clearTimeout(this.timer)
         }
         this.timer = setTimeout(() => {
           const touchY = e.touches[0].clientY - 79
+          // 这里的startY 在updated中获取一次，这里直接使用 提高性能
           const index = Math.floor((touchY - this.startY) / 20)
           if (index >= 0 && index < this.letters.length) {
             this.$emit('change', this.letters[index])
