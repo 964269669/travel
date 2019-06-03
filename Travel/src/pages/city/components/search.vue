@@ -36,7 +36,7 @@ export default {
   },
   watch: {
     keyword() {
-      // 节流函数
+      // 节流函数 提高效率
       if (this.timer) {
         clearTimeout(this.timer)
       }
@@ -87,7 +87,7 @@ export default {
   right: 0
   bottom: 0
   z-index: 1
-  background: green
+  background: #eee
   .search-item
     line-height: 0.62rem
     padding-left: 0.2rem
