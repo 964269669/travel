@@ -35,9 +35,7 @@ export default {
       weekendList: []
     }
   },
-  created() {
-
-  },
+  created() {},
   computed: {
     ...mapState(['city'])
   },
