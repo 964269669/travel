@@ -26,10 +26,14 @@ export default {
   activated() {
     window.addEventListener('scroll', this.handleScroll)
   },
+  deactivated() {
+    window.removeEventListener('scroll', this.handleScroll)
+  },
   methods: {
     handleScroll() {
       console.log(3)
       const top = document.documentElement.scrollTop
+      // 从60的位置开始动画  图片总高度200  200-60=140
       if (top > 60) {
         let opacity = top / 140
         opacity = opacity > 1 ? 1 : opacity
