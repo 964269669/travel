@@ -3,6 +3,7 @@ import App from './App'
 import router from './router'
 import fastClick from 'fastclick' // 移动端点击 300ms延迟
 import store from './strore'
+import 'babel-polyfill'
 
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 import 'swiper/dist/css/swiper.css'
